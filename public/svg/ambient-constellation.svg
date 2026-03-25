@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1200" fill="none">
+  <defs>
+    <linearGradient id="constellationLine" x1="78" y1="112" x2="668" y2="944" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E9C98" stop-opacity=".34"/>
+      <stop offset=".5" stop-color="#85B470" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#D68542" stop-opacity=".26"/>
+    </linearGradient>
+    <radialGradient id="constellationDot" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.5 0.5) rotate(90) scale(1)">
+      <stop stop-color="#F6D6A2" stop-opacity=".98"/>
+      <stop offset="1" stop-color="#15AAA4" stop-opacity=".55"/>
+    </radialGradient>
+  </defs>
+
+  <g stroke="url(#constellationLine)" stroke-linecap="round" stroke-width="1.8" opacity=".88">
+    <path d="M98 154L214 110L330 190L446 146L608 220"/>
+    <path d="M214 110L248 270L362 326L456 272L608 220L660 350"/>
+    <path d="M164 462L288 402L426 470L534 420L650 492"/>
+    <path d="M288 402L308 560L432 622L576 566L650 492"/>
+    <path d="M88 822L236 760L352 842L478 796L626 874"/>
+    <path d="M236 760L266 930L396 986L524 944L626 874"/>
+    <path d="M144 1030L272 972L396 1040L550 1012"/>
+  </g>
+
+  <g fill="url(#constellationDot)">
+    <circle cx="98" cy="154" r="6"/>
+    <circle cx="214" cy="110" r="8"/>
+    <circle cx="330" cy="190" r="6"/>
+    <circle cx="446" cy="146" r="7"/>
+    <circle cx="608" cy="220" r="9"/>
+    <circle cx="248" cy="270" r="6"/>
+    <circle cx="362" cy="326" r="6"/>
+    <circle cx="456" cy="272" r="7"/>
+    <circle cx="660" cy="350" r="6"/>
+    <circle cx="164" cy="462" r="6"/>
+    <circle cx="288" cy="402" r="7"/>
+    <circle cx="426" cy="470" r="8"/>
+    <circle cx="534" cy="420" r="6"/>
+    <circle cx="650" cy="492" r="8"/>
+    <circle cx="308" cy="560" r="6"/>
+    <circle cx="432" cy="622" r="7"/>
+    <circle cx="576" cy="566" r="6"/>
+    <circle cx="88" cy="822" r="6"/>
+    <circle cx="236" cy="760" r="8"/>
+    <circle cx="352" cy="842" r="7"/>
+    <circle cx="478" cy="796" r="6"/>
+    <circle cx="626" cy="874" r="8"/>
+    <circle cx="266" cy="930" r="6"/>
+    <circle cx="396" cy="986" r="7"/>
+    <circle cx="524" cy="944" r="6"/>
+    <circle cx="144" cy="1030" r="6"/>
+    <circle cx="272" cy="972" r="6"/>
+    <circle cx="550" cy="1012" r="6"/>
+  </g>
+
+  <g opacity=".58">
+    <circle cx="126" cy="198" r="2.2" fill="#13A49F"/>
+    <circle cx="186" cy="518" r="2.2" fill="#D28642"/>
+    <circle cx="594" cy="604" r="2.2" fill="#15AAA4"/>
+    <circle cx="672" cy="918" r="2.2" fill="#CC6A3E"/>
+    <circle cx="96" cy="944" r="2.2" fill="#13A49F"/>
+    <circle cx="474" cy="1036" r="2.2" fill="#DDA04B"/>
+  </g>
+</svg>

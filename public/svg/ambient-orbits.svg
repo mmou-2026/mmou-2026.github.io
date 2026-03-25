@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <linearGradient id="orbitA" x1="80" y1="100" x2="520" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12A3A0" stop-opacity=".55"/>
+      <stop offset=".6" stop-color="#76B78C" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#E0A04B" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="orbitB" x1="920" y1="120" x2="1410" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7B8EF7" stop-opacity=".3"/>
+      <stop offset=".42" stop-color="#38B6AA" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#E58E43" stop-opacity=".2"/>
+    </linearGradient>
+    <linearGradient id="orbitC" x1="360" y1="750" x2="1340" y2="1020" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#149A99" stop-opacity=".42"/>
+      <stop offset=".55" stop-color="#8AA56B" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#CC6A3E" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="330" cy="244" r="178" stroke="url(#orbitA)" stroke-width="2"/>
+    <circle cx="330" cy="244" r="266" stroke="url(#orbitA)" stroke-width="1.5" stroke-dasharray="10 18" opacity=".72"/>
+    <circle cx="1244" cy="354" r="232" stroke="url(#orbitB)" stroke-width="2"/>
+    <circle cx="1244" cy="354" r="314" stroke="url(#orbitB)" stroke-width="1.5" stroke-dasharray="8 16" opacity=".58"/>
+    <ellipse cx="876" cy="842" rx="442" ry="212" stroke="url(#orbitC)" stroke-width="2"/>
+    <ellipse cx="876" cy="842" rx="548" ry="290" stroke="url(#orbitC)" stroke-width="1.4" stroke-dasharray="8 20" opacity=".56"/>
+
+    <path d="M154 734C312 644 430 626 570 668C719 712 812 824 960 844C1106 864 1243 794 1436 706" stroke="url(#orbitC)" stroke-width="2.2" opacity=".72"/>
+    <path d="M250 982C450 884 566 838 740 852C962 871 1115 996 1372 1060" stroke="url(#orbitC)" stroke-width="1.6" stroke-dasharray="6 16" opacity=".62"/>
+    <path d="M1020 182C1120 154 1217 150 1326 184C1422 214 1484 260 1532 322" stroke="url(#orbitB)" stroke-width="1.8" stroke-dasharray="6 14" opacity=".72"/>
+    <path d="M168 158C212 124 270 98 346 92C422 86 502 111 556 158" stroke="url(#orbitA)" stroke-width="1.8" stroke-dasharray="5 13" opacity=".7"/>
+
+    <circle cx="176" cy="228" r="6" fill="#15A6A0" fill-opacity=".5"/>
+    <circle cx="486" cy="318" r="8" fill="#D28A43" fill-opacity=".44"/>
+    <circle cx="1166" cy="168" r="6" fill="#6FA98A" fill-opacity=".42"/>
+    <circle cx="1430" cy="446" r="9" fill="#E19244" fill-opacity=".34"/>
+    <circle cx="622" cy="744" r="7" fill="#18ABA2" fill-opacity=".34"/>
+    <circle cx="1092" cy="926" r="10" fill="#D17142" fill-opacity=".3"/>
+    <circle cx="1328" cy="810" r="6" fill="#7A84EA" fill-opacity=".28"/>
+  </g>
+</svg>

@@ -1,0 +1,730 @@
+[
+  {
+    "questionId": "0286dc18-4624-4cdd-9dad-6cf1ca98e07b",
+    "videoId": "2LnFuREmbpk",
+    "videoUrl": "https://www.youtube.com/watch?v=2LnFuREmbpk",
+    "startTime": "01:27",
+    "endTime": "01:30",
+    "domain": "Video Games",
+    "subdomain": "Battle & Mechanics",
+    "channelName": "Kryptek Muted",
+    "question": "What is the big white text that is visible on the screen when we hear someone say, “are we really safe breathing that in? I lowkey have asthma”?",
+    "answer": "“Buy phase” is visible on the screen.",
+    "correctOptionLetter": "J",
+    "correctOptionText": "None of the options given",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The big white text on the screen says “Danger zone.”"
+      },
+      {
+        "letter": "B",
+        "text": "The big white text on the screen says “Lotus.”"
+      },
+      {
+        "letter": "C",
+        "text": "The big white text on the screen says “Matchmaking in progress.”"
+      },
+      {
+        "letter": "D",
+        "text": "The big white text on the screen says “Sudden death.”"
+      },
+      {
+        "letter": "E",
+        "text": "The big white text on the screen says “Attackers win.”"
+      },
+      {
+        "letter": "F",
+        "text": "The big white text on the screen says “Spike planted.”"
+      },
+      {
+        "letter": "G",
+        "text": "The big white text on the screen says “Round start.”"
+      },
+      {
+        "letter": "H",
+        "text": "The big white text on the screen says “Headshot bonus.”"
+      },
+      {
+        "letter": "I",
+        "text": "The big white text on the screen says “Victory.”"
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Needle",
+      "Referential Grounding"
+    ]
+  },
+  {
+    "questionId": "c31d256e-3e0e-4b48-afa1-1be8e97acd14",
+    "videoId": "0EB7-Cu9EgA",
+    "videoUrl": "https://www.youtube.com/watch?v=0EB7-Cu9EgA",
+    "startTime": "05:30",
+    "endTime": "05:42",
+    "domain": "Daily Life",
+    "subdomain": "Gaming",
+    "channelName": "CaseyNeistat",
+    "question": "What do the men do with the tent in the clip right after \"thank God we got this tent. Pouring out,\" is said?",
+    "answer": "The tent pole leans to the side, almost about to fall over, so the man in jeans runs to go catch it.",
+    "correctOptionLetter": "C",
+    "correctOptionText": "The tent pole tilts to the side, almost falling over, so the man in jeans runs over to catch and steady it.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "They decide the tent is too unstable, take it back down completely, and move everyone into the house instead."
+      },
+      {
+        "letter": "B",
+        "text": "They reposition the tent to the driveway so it can cover the smoker and the grills rather than the picnic tables."
+      },
+      {
+        "letter": "C",
+        "text": "The tent pole tilts to the side, almost falling over, so the man in jeans runs over to catch and steady it."
+      },
+      {
+        "letter": "D",
+        "text": "They attach plastic sidewalls to the tent so that the guests will be fully enclosed and protected from the wind."
+      },
+      {
+        "letter": "E",
+        "text": "They secure the tent by tying its corners to nearby trees and a fence post using long ropes."
+      },
+      {
+        "letter": "F",
+        "text": "They finish threading the poles through the fabric and then several people step forward together to push the tent up into position."
+      },
+      {
+        "letter": "G",
+        "text": "They realize the tent is missing parts, return it to the party store, and exchange it for a different canopy."
+      },
+      {
+        "letter": "H",
+        "text": "They stand under the newly raised canopy, remarking that it’s nice and dry beneath the tent even though the rain and water are roaring nearby."
+      },
+      {
+        "letter": "I",
+        "text": "They drag the blue‑and‑white tarp across the wet grass while one man carries bundles of white poles and another shouts instructions about the spikes."
+      },
+      {
+        "letter": "J",
+        "text": "They finally get the tent fully upright, but it wobbles so badly that one man just stands under it joking that it has no structural integrity."
+      }
+    ],
+    "questionType": [
+      "Temporal Understanding",
+      "Sequential",
+      "Needle"
+    ]
+  },
+  {
+    "questionId": "ef426a09-9517-4937-a1eb-f4ebc13badc4",
+    "videoId": "ZXQG66NK-Zw",
+    "videoUrl": "https://www.youtube.com/watch?v=ZXQG66NK-Zw",
+    "startTime": "10:34",
+    "endTime": "10:35",
+    "domain": "Video Games",
+    "subdomain": "Player Reactions",
+    "channelName": "max737Ifly",
+    "question": "What sound can be heard when the text “autopilot disconnect” appears?",
+    "answer": "An alarm noise goes off.",
+    "correctOptionLetter": "F",
+    "correctOptionText": "An alarm noise goes off.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A female voice calmly says, “Autopilot disconnect,” with no alarm."
+      },
+      {
+        "letter": "B",
+        "text": "The cabin announcement about stowing heavy items is played."
+      },
+      {
+        "letter": "C",
+        "text": "The sound of passengers clapping and cheering can be heard."
+      },
+      {
+        "letter": "D",
+        "text": "A soft chime sounds as the landing gear lever is moved."
+      },
+      {
+        "letter": "E",
+        "text": "Only the background orchestral music continues without any additional sound."
+      },
+      {
+        "letter": "F",
+        "text": "An alarm noise goes off."
+      },
+      {
+        "letter": "G",
+        "text": "A series of numeric altitude callouts is heard."
+      },
+      {
+        "letter": "H",
+        "text": "The deep male narrator starts speaking over the cockpit view."
+      },
+      {
+        "letter": "I",
+        "text": "A loud whooshing wind sound drowns out all other audio."
+      },
+      {
+        "letter": "J",
+        "text": "A distinctive triple chime followed by a spoken “warning” is heard."
+      }
+    ],
+    "questionType": [
+      "Context",
+      "Needle",
+      "Referential Grounding"
+    ]
+  },
+  {
+    "questionId": "3cf671dd-8d6a-424b-ac70-2c6e1ddcf77e",
+    "videoId": "2JAxtKKLpIk",
+    "videoUrl": "https://www.youtube.com/watch?v=2JAxtKKLpIk",
+    "startTime": "12:47",
+    "endTime": "12:58",
+    "domain": "Animation",
+    "subdomain": "Comedy & Kids",
+    "channelName": null,
+    "question": "In the scene that is mainly purple, why does the cat start playing and drumming on many different objects?",
+    "answer": "The cat is listening to music, and wants to play along, making his own beat.",
+    "correctOptionLetter": "J",
+    "correctOptionText": "None of the options given",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The cat is angry after getting splashed with cream from the teacup and starts hitting things in frustration."
+      },
+      {
+        "letter": "B",
+        "text": "The cat is trying to wake up the sleepy gray mouse that is resting in a teacup of cream."
+      },
+      {
+        "letter": "C",
+        "text": "The cat is celebrating his birthday and uses nearby objects as drums instead of a real instrument."
+      },
+      {
+        "letter": "D",
+        "text": "The cat is bored because the TV is broken and starts drumming on objects just to pass the time."
+      },
+      {
+        "letter": "E",
+        "text": "The cat is pretending to be a chef and is drumming on kitchen items while preparing food in the bakery."
+      },
+      {
+        "letter": "F",
+        "text": "The cat is practicing for a school talent show where he plans to perform a drum solo."
+      },
+      {
+        "letter": "G",
+        "text": "The cat is copying the tiny yellow mouse that is dancing on the record player and piano."
+      },
+      {
+        "letter": "H",
+        "text": "The cat hears thunder outside and starts drumming on objects to cover up the scary noise."
+      },
+      {
+        "letter": "I",
+        "text": "The cat is trying to signal to Jerry that there is danger nearby by banging on different objects."
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Inference",
+      "Needle"
+    ]
+  },
+  {
+    "questionId": "193791bc-8f01-4e86-adb2-b66e64d80ce7",
+    "videoId": "C3YgRUX97jI",
+    "videoUrl": "https://www.youtube.com/watch?v=C3YgRUX97jI",
+    "startTime": "0:08:26",
+    "endTime": "0:08:30",
+    "domain": "Daily Life",
+    "subdomain": "Gaming",
+    "channelName": "CaseyNeistat",
+    "question": "What is strange about the man's attire when he says \"look at this backpack situation\"?",
+    "answer": "The man is wearing two backpacks connected to each other.",
+    "correctOptionLetter": "J",
+    "correctOptionText": "None of the options given",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The man is wearing a backpack along with a rolling suitcase strapped to it."
+      },
+      {
+        "letter": "B",
+        "text": "The man has two messenger bags crossed over his shoulders instead of a backpack."
+      },
+      {
+        "letter": "C",
+        "text": "The man is carrying one backpack on his back and another bag in his hand."
+      },
+      {
+        "letter": "D",
+        "text": "The man is wearing a backpack while also holding several shopping bags from the candy store."
+      },
+      {
+        "letter": "E",
+        "text": "The man is wearing a backpack and a fanny pack around his waist at the same time."
+      },
+      {
+        "letter": "F",
+        "text": "The man is wearing a backpack over a formal suit and tie, which looks out of place."
+      },
+      {
+        "letter": "G",
+        "text": "The man has a backpack on his back and a camera bag slung across his chest."
+      },
+      {
+        "letter": "H",
+        "text": "The man is wearing a single large backpack that looks overstuffed and lopsided."
+      },
+      {
+        "letter": "I",
+        "text": "The man is wearing a backpack on his back and another on his chest like a baby carrier."
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Needle",
+      "Referential Grounding",
+      "Tacking Spurious Correlations"
+    ]
+  },
+  {
+    "questionId": "de065d26-1cca-4b80-996c-3c92d05761d3",
+    "videoId": "2JAxtKKLpIk",
+    "videoUrl": "https://www.youtube.com/watch?v=2JAxtKKLpIk",
+    "startTime": "04:49",
+    "endTime": "04:51",
+    "domain": "Animation",
+    "subdomain": "Comedy & Kids",
+    "channelName": null,
+    "question": "What object causes the audience to hear the beginning of a sneezing sound?",
+    "answer": "Particles of flour fall onto the grey mouse’s nose which cause it to begin to sneeze.",
+    "correctOptionLetter": "E",
+    "correctOptionText": "Particles of flour fall onto the gray mouse’s nose, causing it to begin to sneeze.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A swirl of dust from an old carpet rises into the gray mouse’s face, making it start to sneeze."
+      },
+      {
+        "letter": "B",
+        "text": "A puff of pepper dust is shaken onto the gray mouse’s nose, triggering the start of a sneeze."
+      },
+      {
+        "letter": "C",
+        "text": "Soap bubbles burst against the gray mouse’s nose, setting off the beginning of a sneeze."
+      },
+      {
+        "letter": "D",
+        "text": "Foam from the bath covers the gray mouse’s face, making it scrunch up as if about to sneeze."
+      },
+      {
+        "letter": "E",
+        "text": "Particles of flour fall onto the gray mouse’s nose, causing it to begin to sneeze."
+      },
+      {
+        "letter": "F",
+        "text": "Popcorn pieces bounce onto the gray mouse’s face while it jumps through clouds of popcorn in the theater."
+      },
+      {
+        "letter": "G",
+        "text": "A spray of perfume mist lands on the gray mouse’s nose, causing it to begin to sneeze."
+      },
+      {
+        "letter": "H",
+        "text": "A cloud of flower pollen drifts onto the gray mouse’s nose, causing it to begin to sneeze."
+      },
+      {
+        "letter": "I",
+        "text": "Cream splashes from a teacup onto the gray mouse’s nose, leading it to react with a startled sound."
+      },
+      {
+        "letter": "J",
+        "text": "Cheese crumbs from a sandwich land on the gray mouse’s snout while it runs under the arches at the cheese fair."
+      }
+    ],
+    "questionType": [
+      "Needle",
+      "Object Interaction Reasoning"
+    ]
+  },
+  {
+    "questionId": "7584b814-285d-46fe-8e69-a7ad2274ebfb",
+    "videoId": "-NYcttDzFuQ",
+    "videoUrl": "https://www.youtube.com/watch?v=-NYcttDzFuQ",
+    "startTime": "00:00",
+    "endTime": "00:48",
+    "domain": "Travel",
+    "subdomain": "Travel Tips & Etiquette",
+    "channelName": "Wolters World",
+    "question": "What is the purpose of the man showing different plugs and explaining them in the video?",
+    "answer": "To let travelers know that continental Europe uses different plugs than the United States and that an adapter/converter will be needed.",
+    "correctOptionLetter": "G",
+    "correctOptionText": "To inform travelers that continental Europe uses different plugs than the United States and that an adapter/converter is needed.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "To show that hotels in Europe have very few available outlets, so travelers should bring power strips to plug in more devices."
+      },
+      {
+        "letter": "B",
+        "text": "To advertise a specific brand of travel adapter that automatically adjusts voltage in any country without user input."
+      },
+      {
+        "letter": "C",
+        "text": "To explain that most modern hotels in Europe now include universal USB charging ports, eliminating the need for any plug adapters."
+      },
+      {
+        "letter": "D",
+        "text": "To visually compare the shapes of USA and Continental Europe plugs so viewers can recognize them at a glance when booking hotels."
+      },
+      {
+        "letter": "E",
+        "text": "To demonstrate how to safely rewire a US plug so it can fit directly into a European wall socket without using an adapter."
+      },
+      {
+        "letter": "F",
+        "text": "To teach viewers how to identify counterfeit electrical plugs being sold in street markets across Europe."
+      },
+      {
+        "letter": "G",
+        "text": "To inform travelers that continental Europe uses different plugs than the United States and that an adapter/converter is needed."
+      },
+      {
+        "letter": "H",
+        "text": "To warn that plugging a US-style device directly into a European socket without the right converter can damage the device."
+      },
+      {
+        "letter": "I",
+        "text": "To show that European trains and buses always provide both US and European outlets for travelers’ convenience."
+      },
+      {
+        "letter": "J",
+        "text": "To compare UK/Malta plugs with European wall sockets and highlight that high‑draw appliances like hair dryers may not be safe to use."
+      }
+    ],
+    "questionType": [
+      "General Holistic Reasoning"
+    ]
+  },
+  {
+    "questionId": "f26c8d18-2b4c-4af3-9b62-841474aa25cf",
+    "videoId": "DjZ2eB-jHe4",
+    "videoUrl": "https://www.youtube.com/watch?v=DjZ2eB-jHe4",
+    "startTime": "0:26:40",
+    "endTime": "0:27:40",
+    "domain": "Animation",
+    "subdomain": "Action & Fantasy",
+    "channelName": "Cartoon Network India",
+    "question": "How does the bird change in the scene where the man says \"what are the super powers of a robin\"?",
+    "answer": "The bird changes after it is put in the chamber by doing more human actions like doing a flip and using a grappling hook. Previously the bird acted just like a bird.",
+    "correctOptionLetter": "F",
+    "correctOptionText": "After being put in the chamber, the robin starts doing human-like actions such as flipping and using a grappling hook, whereas before it behaved just like a normal bird.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "After being put in the chamber, the robin splits into multiple identical birds that fly in formation."
+      },
+      {
+        "letter": "B",
+        "text": "After being put in the chamber, the robin grows metal wings and shoots lasers from its eyes, instead of acting like a real bird."
+      },
+      {
+        "letter": "C",
+        "text": "After being put in the chamber, the robin turns into a different animal while it had previously just flown around as a bird."
+      },
+      {
+        "letter": "D",
+        "text": "After being put in the chamber, the robin turns into a human sidekick wearing a mask and cape."
+      },
+      {
+        "letter": "E",
+        "text": "After being put in the chamber, the robin changes color to bright neon green and leaves glowing footprints everywhere."
+      },
+      {
+        "letter": "F",
+        "text": "After being put in the chamber, the robin starts doing human-like actions such as flipping and using a grappling hook, whereas before it behaved just like a normal bird."
+      },
+      {
+        "letter": "G",
+        "text": "After being put in the chamber, the robin becomes robotic and stiff, unlike its earlier natural bird movements."
+      },
+      {
+        "letter": "H",
+        "text": "After being put in the chamber, the robin becomes invisible and only its voice can be heard."
+      },
+      {
+        "letter": "I",
+        "text": "After being put in the chamber, the robin only gains the ability to talk, even though it had acted like an ordinary bird before."
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Subscene",
+      "Context",
+      "Comparative"
+    ]
+  },
+  {
+    "questionId": "2e6c6d73-c7a5-4472-b87f-f992a61e6c99",
+    "videoId": "2anxKnadoag",
+    "videoUrl": "https://www.youtube.com/watch?v=2anxKnadoag",
+    "startTime": "02:20",
+    "endTime": "02:25",
+    "domain": "Sports",
+    "subdomain": "Analytics",
+    "channelName": "Premier League",
+    "question": "What visual cues show that the man was upset after the announcer says, “Dempsey missed it incredibly”?",
+    "answer": "The man grabs the net and bends over after missing, and then jogs out, looks at the ground, and covers his head in his hands, then covers his mouth.",
+    "correctOptionLetter": "H",
+    "correctOptionText": "He grabs the net and bends over after missing, then jogs away while looking down at the ground, puts his head in his hands, and finally covers his mouth.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "He lies on the turf in the box as defenders scramble, while a teammate stands with his hands on his head in shock."
+      },
+      {
+        "letter": "B",
+        "text": "He angrily kicks the goalpost and shouts at himself before turning away from the net."
+      },
+      {
+        "letter": "C",
+        "text": "He tumbles to the turf after missing, then stays down for a moment clutching his head in disbelief."
+      },
+      {
+        "letter": "D",
+        "text": "He sits down on the pitch near the penalty spot and hides his face completely inside his jersey."
+      },
+      {
+        "letter": "E",
+        "text": "He argues with the referee and waves his arms wildly, blaming the officials for the missed chance."
+      },
+      {
+        "letter": "F",
+        "text": "He walks away from goal with empty eyes, showing no celebration, as the commentator notes the emptiness in his expression."
+      },
+      {
+        "letter": "G",
+        "text": "He rips off his shirt in frustration and throws it to the ground after the miss."
+      },
+      {
+        "letter": "H",
+        "text": "He grabs the net and bends over after missing, then jogs away while looking down at the ground, puts his head in his hands, and finally covers his mouth."
+      },
+      {
+        "letter": "I",
+        "text": "He drops to his knees on the pitch, looks up at the sky, and screams in anger after missing."
+      },
+      {
+        "letter": "J",
+        "text": "He stands in the six-yard box staring at the ground in disbelief after firing wide, unable to look up at the pitch."
+      }
+    ],
+    "questionType": [
+      "Temporal Understanding",
+      "Sequential",
+      "Inference"
+    ]
+  },
+  {
+    "questionId": "899669c2-1ed4-4f15-86ab-e11f49decba8",
+    "videoId": "E-MTkeK4eN8",
+    "videoUrl": "https://www.youtube.com/watch?v=E-MTkeK4eN8",
+    "startTime": "0:06:16",
+    "endTime": "0:06:25",
+    "domain": "Daily Life",
+    "subdomain": "Gaming",
+    "channelName": "CaseyNeistat",
+    "question": "How does the camera quality change after the speaker says \"bye crappy point and shoot\"?",
+    "answer": "The camera quality becomes much more clear and detailed after the speaker says \"bye crappy point and shoot\".",
+    "correctOptionLetter": "J",
+    "correctOptionText": "None of the options given",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The camera quality stays about the same after he says \"bye crappy point‑and‑shoot,\" with no noticeable improvement."
+      },
+      {
+        "letter": "B",
+        "text": "The frame rate drops and the video becomes choppy and stuttery after he says \"bye crappy point‑and‑shoot.\""
+      },
+      {
+        "letter": "C",
+        "text": "The camera switches to a fisheye lens after he says \"bye crappy point‑and‑shoot,\" making the edges of the frame curve noticeably."
+      },
+      {
+        "letter": "D",
+        "text": "The video switches from the new clear camera back to the older, lower‑quality point‑and‑shoot after he says \"bye crappy point‑and‑shoot.\""
+      },
+      {
+        "letter": "E",
+        "text": "A heavy cinematic color filter is applied after he says \"bye crappy point‑and‑shoot,\" making everything look orange and teal."
+      },
+      {
+        "letter": "F",
+        "text": "The video immediately switches to black and white after he says \"bye crappy point‑and‑shoot,\" giving it a vintage look."
+      },
+      {
+        "letter": "G",
+        "text": "The resolution suddenly drops to a pixelated, low‑definition image after he says \"bye crappy point‑and‑shoot.\""
+      },
+      {
+        "letter": "H",
+        "text": "The footage changes to a wide aerial drone shot of the city right after he says \"bye crappy point‑and‑shoot,\" but the quality itself doesn’t noticeably change."
+      },
+      {
+        "letter": "I",
+        "text": "The image briefly goes out of focus and looks worse right after he says \"bye crappy point‑and‑shoot\" before returning to normal."
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Temporal Understanding",
+      "Sequential",
+      "Context",
+      "Comparative"
+    ]
+  },
+  {
+    "questionId": "21e5704d-9300-48bf-8553-ffa52f49f6a8",
+    "videoId": "F_8OKImO2pc",
+    "videoUrl": "https://www.youtube.com/watch?v=F_8OKImO2pc",
+    "startTime": "0:00:04",
+    "endTime": "0:00:14",
+    "domain": "Film",
+    "subdomain": "Character & Theme Focus",
+    "channelName": "Rotten Tomatoes Trailers",
+    "question": "Why does the sound dramatically increase in the scenes where the man is heard breathing heavily?",
+    "answer": "The sound increases when the camera cuts to a silhouette figure. This helps increase the tension in the trailer and set up that the silhouette figure is a villain.",
+    "correctOptionLetter": "I",
+    "correctOptionText": "The sound increases when the camera cuts to the silhouette figure, heightening the tension in the trailer and signaling that this silhouette is the villain.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The sound increases when the school principal steps onto the stage and begins addressing the audience about the incident."
+      },
+      {
+        "letter": "B",
+        "text": "The sound increases when police sirens are heard approaching the school, suggesting that help is finally on the way."
+      },
+      {
+        "letter": "C",
+        "text": "The sound increases when the man opens the door marked “NO ADMITTANCE — AUTHORIZED PERSONNEL ONLY,” stressing the danger of entering the restricted area."
+      },
+      {
+        "letter": "D",
+        "text": "The sound increases when the title “THE GALLOWS” burns onto the screen, adding dramatic impact to the final reveal of the movie’s name."
+      },
+      {
+        "letter": "E",
+        "text": "The sound increases when the lights suddenly turn back on in the gymnasium, revealing all of the students gathered together."
+      },
+      {
+        "letter": "F",
+        "text": "The sound increases when a teacher shouts at the students to leave the auditorium, creating a sense of urgent evacuation."
+      },
+      {
+        "letter": "G",
+        "text": "The sound increases when the fire alarm starts blaring, emphasizing the chaos as the characters try to escape the school."
+      },
+      {
+        "letter": "H",
+        "text": "The sound increases when a clock tower bell starts tolling outside the school, marking the exact time of Charlie’s death."
+      },
+      {
+        "letter": "I",
+        "text": "The sound increases when the camera cuts to the silhouette figure, heightening the tension in the trailer and signaling that this silhouette is the villain."
+      },
+      {
+        "letter": "J",
+        "text": "The sound increases when the students are shown watching the disturbing footage on the CRT television, underscoring their horrified reactions."
+      }
+    ],
+    "questionType": [
+      "Temporal Understanding",
+      "Context",
+      "Audio-Visual Stitching"
+    ]
+  },
+  {
+    "questionId": "1b27a7ab-59dd-4197-9d98-64cf964ba503",
+    "videoId": "4X69LyVEuGg",
+    "videoUrl": "https://www.youtube.com/watch?v=4X69LyVEuGg",
+    "startTime": "03:10",
+    "endTime": "03:12",
+    "domain": "Sports",
+    "subdomain": "Analytics",
+    "channelName": "ICC",
+    "question": "How many green players are visible when the announcer says, “it’s a great piece of bowling”?",
+    "answer": "There are two green players visible.",
+    "correctOptionLetter": "C",
+    "correctOptionText": "There are two green players visible.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "There is only one green player visible, the bowler running in."
+      },
+      {
+        "letter": "B",
+        "text": "All eleven green players are visible in a wide stadium shot."
+      },
+      {
+        "letter": "C",
+        "text": "There are two green players visible."
+      },
+      {
+        "letter": "D",
+        "text": "Seven green players are visible, including the wicketkeeper and close catchers."
+      },
+      {
+        "letter": "E",
+        "text": "Six green players are visible inside the thirty‑yard circle."
+      },
+      {
+        "letter": "F",
+        "text": "Four green fielders are visible spread around the outfield."
+      },
+      {
+        "letter": "G",
+        "text": "There are three green players visible in the frame."
+      },
+      {
+        "letter": "H",
+        "text": "Eight green players are visible, with only one fielder off camera."
+      },
+      {
+        "letter": "I",
+        "text": "No green players are visible; only the English batter and umpire are shown."
+      },
+      {
+        "letter": "J",
+        "text": "None of the options given"
+      }
+    ],
+    "questionType": [
+      "Needle",
+      "Referential Grounding",
+      "Counting"
+    ]
+  }
+]

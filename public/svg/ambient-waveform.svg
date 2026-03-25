@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1200" fill="none">
+  <defs>
+    <linearGradient id="waveStroke" x1="96" y1="100" x2="616" y2="1052" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#119B97" stop-opacity=".4"/>
+      <stop offset=".52" stop-color="#79AF7E" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#D37B40" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="waveFill" x1="156" y1="130" x2="548" y2="1180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19A8A2" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#DCA24C" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#D26C3D" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M82 174C120 174 120 110 158 110C196 110 196 236 234 236C272 236 272 90 310 90C348 90 348 272 386 272C424 272 424 128 462 128C500 128 500 214 538 214C576 214 576 162 614 162" stroke="url(#waveStroke)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 488C148 488 148 398 184 398C220 398 220 618 256 618C292 618 292 362 328 362C364 362 364 680 400 680C436 680 436 444 472 444C508 444 508 576 544 576C580 576 580 522 616 522" stroke="url(#waveStroke)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".86"/>
+  <path d="M72 846C110 846 110 770 148 770C186 770 186 924 224 924C262 924 262 716 300 716C338 716 338 996 376 996C414 996 414 792 452 792C490 792 490 908 528 908C566 908 566 850 604 850" stroke="url(#waveStroke)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".76"/>
+
+  <g fill="url(#waveFill)" opacity=".9">
+    <rect x="128" y="152" width="12" height="92" rx="6"/>
+    <rect x="168" y="120" width="12" height="152" rx="6"/>
+    <rect x="208" y="176" width="12" height="60" rx="6"/>
+    <rect x="474" y="454" width="12" height="132" rx="6"/>
+    <rect x="514" y="430" width="12" height="164" rx="6"/>
+    <rect x="554" y="488" width="12" height="86" rx="6"/>
+    <rect x="158" y="804" width="12" height="116" rx="6"/>
+    <rect x="198" y="760" width="12" height="172" rx="6"/>
+    <rect x="238" y="826" width="12" height="80" rx="6"/>
+  </g>
+
+  <g stroke="url(#waveStroke)" stroke-linecap="round" opacity=".58">
+    <path d="M124 286H596" stroke-width="1.6" stroke-dasharray="4 12"/>
+    <path d="M104 676H612" stroke-width="1.6" stroke-dasharray="4 12"/>
+    <path d="M92 1036H598" stroke-width="1.6" stroke-dasharray="4 12"/>
+  </g>
+</svg>
