@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import questionShowcase from './data/questionShowcase.json'
+import {
+  failureCases,
+  failurePatterns,
+  failureSections,
+  type FailureCase,
+  type FailureCategory,
+} from './data/failureAnalysis'
 
 type NavItem = {
   label: string
@@ -47,6 +54,7 @@ const navigation: NavItem[] = [
   { label: 'Figure', target: '#figure-1' },
   { label: 'Benchmark', target: '#benchmark' },
   { label: 'Examples', target: '#examples' },
+  { label: 'Failure Cases', target: '#failure-cases' },
   { label: 'Leaderboard', target: '#leaderboard' },
 ]
 
@@ -66,6 +74,13 @@ let previousScrollRestoration: ScrollRestoration | null = null
 const activeSection = ref(navigation[0]?.target ?? '#abstract')
 const showcaseExamples = questionShowcase as ShowcaseExample[]
 const activeShowcaseIndex = ref(0)
+const defaultFailureSection = failureSections[0]!
+const activeFailureCategory = ref<FailureCategory>(defaultFailureSection.category)
+const activeFailureCaseIndices = ref<Record<FailureCategory, number>>({
+  both_wrong: 0,
+  qwen_wrong: 0,
+  gemini_wrong: 0,
+})
 
 const benchmarkStats: Stat[] = [
   { value: '5,000', label: 'QA pairs' },
@@ -255,6 +270,67 @@ const activeShowcase = computed(
   () => showcaseExamples[activeShowcaseIndex.value] ?? showcaseExamples[0],
 )
 
+const failureCasesByCategory = computed<Record<FailureCategory, FailureCase[]>>(() => ({
+  both_wrong: failureCases.filter((item) => item.category === 'both_wrong'),
+  qwen_wrong: failureCases.filter((item) => item.category === 'qwen_wrong'),
+  gemini_wrong: failureCases.filter((item) => item.category === 'gemini_wrong'),
+}))
+
+const activeFailureSection = computed(
+  () =>
+    failureSections.find((item) => item.category === activeFailureCategory.value) ??
+    defaultFailureSection,
+)
+
+const activeFailureCases = computed(
+  () => failureCasesByCategory.value[activeFailureCategory.value] ?? [],
+)
+
+const failureCaseCount = (category: FailureCategory) =>
+  failureCasesByCategory.value[category]?.length ?? 0
+
+const activeFailureCase = computed(
+  () =>
+    activeFailureCases.value[activeFailureCaseIndices.value[activeFailureCategory.value]] ??
+    activeFailureCases.value[0],
+)
+
+const setActiveFailureCaseIndex = (category: FailureCategory, index: number) => {
+  activeFailureCaseIndices.value = {
+    ...activeFailureCaseIndices.value,
+    [category]: index,
+  }
+}
+
+const formatFailureLabel = (label: string) =>
+  label
+    .toLowerCase()
+    .replace(/(^|[\s-/])([a-z])/g, (_, prefix: string, char: string) => `${prefix}${char.toUpperCase()}`)
+    .replace(/\bVs\b/g, 'vs')
+    .replace(/\bAv\b/g, 'AV')
+
+const failureThemeBadgeClass = (theme: 'danger' | 'warning' | 'info') => {
+  switch (theme) {
+    case 'danger':
+      return 'border-[rgb(180_79_54_/_0.18)] bg-[rgb(180_79_54_/_0.1)] text-[#9c3f25] dark:border-[rgb(240_167_86_/_0.24)] dark:bg-[rgb(240_167_86_/_0.12)] dark:text-[#ffd0a6]'
+    case 'warning':
+      return 'border-[rgb(217_145_60_/_0.18)] bg-[rgb(217_145_60_/_0.12)] text-[#9b641f] dark:border-[rgb(240_167_86_/_0.24)] dark:bg-[rgb(240_167_86_/_0.12)] dark:text-[#ffd0a6]'
+    case 'info':
+      return 'border-[rgb(47_111_214_/_0.18)] bg-[rgb(47_111_214_/_0.1)] text-[#2f6fd6] dark:border-[rgb(105_170_255_/_0.22)] dark:bg-[rgb(105_170_255_/_0.12)] dark:text-[#b9d4ff]'
+  }
+}
+
+const failureAnswerRowClass = (state: 'truth' | 'correct' | 'wrong') => {
+  switch (state) {
+    case 'truth':
+      return 'bg-[rgb(18_122_120_/_0.08)] dark:bg-[rgb(50_179_171_/_0.14)]'
+    case 'correct':
+      return 'bg-[rgb(18_122_120_/_0.06)] dark:bg-[rgb(50_179_171_/_0.12)]'
+    case 'wrong':
+      return 'bg-[rgb(180_79_54_/_0.06)] dark:bg-[rgb(217_108_76_/_0.14)]'
+  }
+}
+
 const updateActiveSection = () => {
   if (typeof window === 'undefined' || typeof document === 'undefined') {
     return
@@ -374,10 +450,6 @@ onBeforeUnmount(() => {
           </nav>
 
           <div class="flex items-center gap-2">
-            <span
-              class="hidden rounded-full border border-[var(--border)] bg-white/70 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[var(--muted)] sm:inline-flex dark:bg-[rgb(22_29_35_/_0.9)]">
-              Review Version
-            </span>
             <UColorModeSelect color="neutral" variant="outline" size="xs" class="mode-select w-[6.75rem] sm:w-[7.25rem]"
               :content="{ side: 'bottom', align: 'end', sideOffset: 10 }" :ui="colorModeSelectUi" />
           </div>
@@ -430,6 +502,11 @@ onBeforeUnmount(() => {
                     class="button-fx rounded-full border-[var(--border-strong)] bg-white/65 px-5 text-[var(--ink)]"
                     @click="jumpTo('#examples')">
                     See Examples
+                  </UButton>
+                  <UButton color="neutral" variant="outline"
+                    class="button-fx rounded-full border-[var(--border-strong)] bg-white/65 px-5 text-[var(--ink)]"
+                    @click="jumpTo('#failure-cases')">
+                    Failure Cases
                   </UButton>
                   <UButton color="neutral" variant="outline"
                     class="button-fx rounded-full border-[var(--border-strong)] bg-white/65 px-5 text-[var(--ink)]"
@@ -674,6 +751,266 @@ onBeforeUnmount(() => {
           </UCard>
         </section>
 
+        <section id="failure-cases"
+          class="mx-auto max-w-7xl scroll-mt-28 px-6 py-8 sm:px-8 lg:scroll-mt-32 lg:px-12 lg:py-10">
+          <div class="section-heading reveal">
+            <UBadge color="neutral" variant="soft" class="section-badge">Supplementary</UBadge>
+            <h2 class="display-font section-title">Failure Case Analysis</h2>
+            <p class="section-copy">
+              To complement our quantitative evaluation, we present a curated set of 30 failure cases illustrating how
+              state-of-the-art multimodal models fail on MMOU. Across the full benchmark, Gemini 2.5 Pro reaches
+              57.5% accuracy and Qwen3-Omni-30B-A3B-Instruct reaches 36.3%. Below, we highlight representative
+              examples where these models fail, organized into three categories.
+            </p>
+          </div>
+
+          <UCard class="surface-card mt-8 rounded-[32px] p-2">
+            <div
+              class="grid gap-5 px-4 py-4 sm:px-5 sm:py-5 xl:grid-cols-[minmax(0,1.06fr)_minmax(20rem,0.94fr)] xl:items-start">
+              <div class="space-y-4">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">
+                    Rebuttal supplement
+                  </p>
+                  <p class="mt-3 text-base/8 text-[var(--muted)]">
+                    We organize the cases into three groups: (A) questions where both models fail and choose the same
+                    wrong answer, revealing systematic shared bias; (B) questions where only Qwen3-Omni fails,
+                    highlighting a capability gap in audio-visual grounding; and (C) questions where Gemini 2.5 Pro
+                    fails even though Qwen3-Omni succeeds, showing that MMOU is still genuinely difficult for the
+                    strongest models in our evaluation.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="section in failureSections" :key="section.category"
+                    class="rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+                    {{ section.shortLabel }}
+                  </span>
+                </div>
+
+              </div>
+
+              <aside
+                class="rounded-[24px] border border-[var(--border)] bg-white/72 px-4 py-4 shadow-[0_12px_36px_rgb(16_23_28_/_0.05)] dark:bg-[rgb(22_29_35_/_0.9)]">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">Key insight</p>
+                <h3 class="text-2xl font-semibold tracking-[-0.04em] text-[var(--ink)]">
+                  Shared errors are systematic, not random.
+                </h3>
+                <p class="mt-3 text-sm/7 text-[var(--muted)]">
+                  When both models fail on the same question, they frequently choose the identical wrong answer,
+                  revealing systematic shared biases rather than random errors. The majority of mutual failures involve
+                  audio-dependent questions, indicating that current systems still struggle to align what they hear
+                  with what they see.
+                </p>
+              </aside>
+            </div>
+          </UCard>
+
+          <div class="mt-6">
+            <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3" role="tablist" aria-label="Failure case categories">
+              <button v-for="section in failureSections" :key="section.category" type="button"
+                :class="[
+                  'showcase-button',
+                  'button-fx',
+                  'h-full',
+                  'text-left',
+                  { 'showcase-button-active': activeFailureCategory === section.category },
+                ]" :aria-selected="activeFailureCategory === section.category"
+                @click="activeFailureCategory = section.category">
+                <div class="flex items-center justify-between gap-3">
+                  <span
+                    :class="['rounded-full border px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em]', failureThemeBadgeClass(section.theme)]">
+                    {{ section.shortLabel }}
+                  </span>
+                  <span class="text-xs font-semibold text-[var(--muted)]">{{ failureCaseCount(section.category) }}</span>
+                </div>
+                <p class="mt-2 text-sm font-semibold leading-5 text-[var(--ink)]">{{ section.title }}</p>
+              </button>
+            </div>
+
+            <UCard class="surface-card mt-3 rounded-[32px] p-2">
+              <div class="space-y-3 px-3 py-3 sm:px-4 sm:py-4">
+                <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+                  <div class="max-w-4xl">
+                    <span
+                      :class="['inline-flex rounded-full border px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em]', failureThemeBadgeClass(activeFailureSection.theme)]">
+                      {{ activeFailureSection.label }}
+                    </span>
+                    <h3 class="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--ink)]">
+                      {{ activeFailureSection.title }}
+                    </h3>
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+                      {{ activeFailureCases.length }} curated cases
+                    </span>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                    <button v-for="(item, index) in activeFailureCases" :key="item.id" type="button"
+                      :class="[
+                        'showcase-button',
+                        'button-fx',
+                        'h-full',
+                        'text-left',
+                        '!px-3 !py-2',
+                        { 'showcase-button-active': activeFailureCaseIndices[activeFailureCategory] === index },
+                      ]" @click="setActiveFailureCaseIndex(activeFailureCategory, index)">
+                      <div class="flex items-start gap-2">
+                        <span
+                          class="mt-0.5 inline-flex items-center justify-center rounded-full bg-[rgb(19_32_40_/_0.08)] px-2 py-0.5 text-[0.62rem] font-bold uppercase tracking-[0.08em] text-[var(--ink)]">
+                          {{ item.id }}
+                        </span>
+                        <p class="text-[0.92rem] font-semibold leading-5 text-[var(--ink)]"
+                          style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                          {{ formatFailureLabel(item.failureLabel) }}
+                        </p>
+                      </div>
+                    </button>
+                  </div>
+
+                  <article v-if="activeFailureCase"
+                    class="rounded-[22px] border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-3 sm:px-4 sm:py-4">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                        <div>
+                          <div class="flex flex-wrap items-center gap-2">
+                            <span
+                              class="inline-flex items-center justify-center rounded-full bg-[rgb(19_32_40_/_0.08)] px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-[var(--ink)]">
+                              {{ activeFailureCase.id }}
+                            </span>
+                            <h4 class="text-lg font-semibold tracking-[-0.03em] text-[var(--ink)]">
+                              {{ formatFailureLabel(activeFailureCase.failureLabel) }}
+                            </h4>
+                          </div>
+
+                          <div class="mt-2 flex flex-wrap gap-2">
+                            <span
+                              class="rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+                              <span class="font-mono text-[0.76rem]">{{ activeFailureCase.video }}</span>
+                            </span>
+                            <span v-for="skill in activeFailureCase.skills" :key="skill"
+                              class="rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent-strong)]">
+                              {{ skill }}
+                            </span>
+                          </div>
+                        </div>
+
+                        <span v-if="activeFailureCase.sameWrong"
+                          class="inline-flex items-center gap-2 rounded-full border border-[rgb(180_79_54_/_0.18)] bg-[rgb(180_79_54_/_0.1)] px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[#9c3f25] dark:border-[rgb(240_167_86_/_0.24)] dark:bg-[rgb(240_167_86_/_0.12)] dark:text-[#ffd0a6]">
+                          <span>⚠</span>
+                          Same wrong
+                        </span>
+                      </div>
+
+                      <div class="rounded-[18px] border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-3">
+                        <p class="text-sm/6 font-medium text-[var(--ink)]">{{ activeFailureCase.question }}</p>
+                      </div>
+
+                      <div class="overflow-x-auto rounded-[18px] border border-[var(--border)]">
+                        <table class="min-w-[40rem] w-full border-collapse text-left">
+                          <thead>
+                            <tr class="bg-white/60 dark:bg-white/5">
+                              <th scope="col"
+                                class="border-b border-[var(--border)] px-3 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+                                Source
+                              </th>
+                              <th scope="col"
+                                class="border-b border-l border-[var(--border)] px-3 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+                                Answer
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr :class="failureAnswerRowClass('truth')">
+                              <th scope="row"
+                                class="w-48 border-b border-[var(--border)] px-3 py-2.5 text-[0.92rem] font-semibold text-[var(--ink)]">
+                                <span class="inline-flex items-center gap-2">
+                                  <span>✅</span>
+                                  <span>Ground Truth</span>
+                                </span>
+                              </th>
+                              <td class="border-b border-l border-[var(--border)] px-3 py-2.5 text-[0.92rem]/6 text-[var(--ink)]">
+                                <span class="mr-1 inline-block min-w-8 font-bold text-[var(--ink)]">({{ activeFailureCase.gt.letter }})</span>
+                                {{ activeFailureCase.gt.text }}
+                              </td>
+                            </tr>
+                            <tr :class="failureAnswerRowClass(activeFailureCase.gemini.correct ? 'correct' : 'wrong')">
+                              <th scope="row"
+                                class="w-48 border-b border-[var(--border)] px-3 py-2.5 text-[0.92rem] font-semibold text-[var(--ink)]">
+                                <span class="inline-flex items-center gap-2">
+                                  <span>{{ activeFailureCase.gemini.correct ? '✅' : '❌' }}</span>
+                                  <span>Gemini 2.5 Pro</span>
+                                </span>
+                              </th>
+                              <td class="border-b border-l border-[var(--border)] px-3 py-2.5 text-[0.92rem]/6 text-[var(--ink)]">
+                                <span class="mr-1 inline-block min-w-8 font-bold text-[var(--ink)]">({{ activeFailureCase.gemini.letter }})</span>
+                                {{ activeFailureCase.gemini.text }}
+                              </td>
+                            </tr>
+                            <tr :class="failureAnswerRowClass(activeFailureCase.qwen.correct ? 'correct' : 'wrong')">
+                              <th scope="row" class="w-48 px-3 py-2.5 text-[0.92rem] font-semibold text-[var(--ink)]">
+                                <span class="inline-flex items-center gap-2">
+                                  <span>{{ activeFailureCase.qwen.correct ? '✅' : '❌' }}</span>
+                                  <span>Qwen3-Omni</span>
+                                </span>
+                              </th>
+                              <td class="border-l border-[var(--border)] px-3 py-2.5 text-[0.92rem]/6 text-[var(--ink)]">
+                                <span class="mr-1 inline-block min-w-8 font-bold text-[var(--ink)]">({{ activeFailureCase.qwen.letter }})</span>
+                                {{ activeFailureCase.qwen.text }}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="rounded-[18px] border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-3">
+                        <p class="text-sm/6 text-[var(--ink)]">{{ activeFailureCase.analysis }}</p>
+                      </div>
+
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </UCard>
+          </div>
+
+          <UCard class="surface-card mt-8 rounded-[32px] p-2">
+            <div class="space-y-4 px-4 py-4 sm:px-5 sm:py-5">
+              <div class="max-w-4xl">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Failure taxonomy
+                </p>
+                <h3 class="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[var(--ink)]">
+                  Recurring failure patterns on MMOU
+                </h3>
+                <p class="mt-3 text-sm/7 text-[var(--muted)]">
+                  Across the curated examples above, seven patterns recur consistently. Together they suggest that
+                  current models still process audio and visuals semi-independently and often default to plausible
+                  narratives instead of grounded evidence.
+                </p>
+              </div>
+
+              <div class="grid gap-3 lg:grid-cols-2">
+                <article v-for="(pattern, index) in failurePatterns" :key="pattern.title"
+                  class="rounded-[22px] border border-[var(--border)] bg-[var(--chip-bg)] px-4 py-4">
+                  <div class="flex gap-4">
+                    <span class="step-badge">{{ String(index + 1).padStart(2, '0') }}</span>
+                    <div>
+                    <h4 class="text-lg font-semibold tracking-[-0.02em] text-[var(--ink)]">{{ pattern.title }}</h4>
+                    <p class="mt-2 text-sm/7 text-[var(--muted)]">{{ pattern.description }}</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </UCard>
+        </section>
+
         <section id="leaderboard"
           class="mx-auto max-w-7xl scroll-mt-28 px-6 py-8 sm:px-8 lg:scroll-mt-32 lg:px-12 lg:py-10">
           <div>
@@ -730,6 +1067,11 @@ onBeforeUnmount(() => {
               class="button-fx min-w-[8.75rem] justify-center whitespace-nowrap rounded-full border-[var(--border-strong)] bg-white/68 px-5 text-sm font-semibold text-[var(--ink)]"
               @click="jumpTo('#abstract')">
               Back to top
+            </UButton>
+            <UButton color="neutral" variant="outline"
+              class="button-fx min-w-[8.75rem] justify-center whitespace-nowrap rounded-full border-[var(--border-strong)] bg-white/68 px-5 text-sm font-semibold text-[var(--ink)]"
+              @click="jumpTo('#failure-cases')">
+              Failure Cases
             </UButton>
             <UButton color="neutral"
               class="button-fx min-w-[8.75rem] justify-center whitespace-nowrap rounded-full px-5 text-sm"
